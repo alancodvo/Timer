@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *indexLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *myDatePicker;
 - (IBAction)changeDatePicker:(id)sender;
+- (IBAction)tapBtn:(id)sender;
 
 @end
 
@@ -32,5 +33,9 @@
     [df setDateFormat:@"HH:mm"];
     NSString *datestr = [df stringFromDate:self.myDatePicker.date];
     NSLog(@"%@", datestr);
+}
+
+- (IBAction)tapBtn:(id)sender {
+    NSLog(@"タップしました");
 }
 @end
