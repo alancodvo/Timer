@@ -28,5 +28,9 @@
 }
 
 - (IBAction)changeDatePicker:(id)sender {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"HH:mm"];
+    NSString *datestr = [df stringFromDate:self.myDatePicker.date];
+    NSLog(@"%@", datestr);
 }
 @end
