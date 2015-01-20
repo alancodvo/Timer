@@ -412,6 +412,7 @@
 				E76078EF1A6EAD3E003C0EF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E76078F01A6EAD3E003C0EF3 /* Build configuration list for PBXNativeTarget "TimerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				E76078F21A6EAD3E003C0EF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
