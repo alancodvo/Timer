@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *indexLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *myDatePicker;
+- (IBAction)changeDatePicker:(id)sender;
 
 @end
 
@@ -25,4 +27,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)changeDatePicker:(id)sender {
+}
 @end

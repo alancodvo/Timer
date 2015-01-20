@@ -25,15 +25,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-kd-klA">
+                                <rect key="frame" x="140" y="90.5" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="443461858.78060597">
+                                    <!--2015-01-20 15:50:58 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="vXZ-lx-hvc" eventType="valueChanged" id="dij-s2-MY0"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="1wK-kd-klA" secondAttribute="centerX" id="CkQ-Mi-13m"/>
+                            <constraint firstItem="1wK-kd-klA" firstAttribute="top" secondItem="Zxe-b6-1UX" secondAttribute="bottom" constant="25" id="IaP-3L-3cw"/>
                             <constraint firstAttribute="centerX" secondItem="Zxe-b6-1UX" secondAttribute="centerX" id="Skj-uy-WRi"/>
                             <constraint firstItem="Zxe-b6-1UX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="25" id="urf-lD-Yi4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="indexLabel" destination="Zxe-b6-1UX" id="NTD-qb-sPZ"/>
+                        <outlet property="myDatePicker" destination="1wK-kd-klA" id="WDt-fX-n5b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
