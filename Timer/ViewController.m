@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +37,9 @@
 }
 
 - (IBAction)tapBtn:(id)sender {
-    NSLog(@"タップしました");
+    NSDateFormatter *df2 = [[NSDateFormatter alloc] init];
+    [df2 setDateFormat:@"HH:mm"];
+    NSString *datestr2 = [df2 stringFromDate:self.myDatePicker.date];
+    NSLog(@"%@", datestr2);
 }
 @end
