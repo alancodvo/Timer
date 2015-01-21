@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *myDatePicker;
 - (IBAction)changeDatePicker:(id)sender;
 - (IBAction)tapBtn:(id)sender;
+- (IBAction)returnMain:(UIStoryboardSegue *)segue;
 
 @end
 
@@ -43,7 +44,8 @@
     NSLog(@"%@", datestr2);
 }
 
-- (IBAction)returnMain:(UIStoryboardSegue *)segue {
+- (IBAction)returnMain:(UIStoryboardSegue *)segue {
     
 }
+
 @end
