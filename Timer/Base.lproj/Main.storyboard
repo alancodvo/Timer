@@ -42,6 +42,7 @@
                                 </state>
                                 <connections>
                                     <action selector="tapBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2Dp-mQ-yP5"/>
+                                    <segue destination="vJX-3h-iNZ" kind="modal" id="JN7-Zl-jrr"/>
                                 </connections>
                             </button>
                         </subviews>
