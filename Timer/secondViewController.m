@@ -8,13 +8,14 @@
 
 #import "secondViewController.h"
 
-@interface secondViewController ()
+@interface secondViewController () {
+}
 
 @end
 
 @implementation secondViewController
 
-@synthesize selectedTime;
+@synthesize myCount;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,7 +29,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     // 2つ目の画面を表示するとき、データを表示する
-    NSLog(@"1つ目の画面からのデータ<%@>", selectedTime);
+    NSLog(@"1つ目の画面からのデータ<%d>", myCount);
 }
 
 @end

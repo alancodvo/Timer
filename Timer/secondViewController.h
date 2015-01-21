@@ -10,7 +10,7 @@
 
 @interface secondViewController : UIViewController {
     // 受け渡し用の変数
-    NSString *selectedTime;
+    int myCount;
 }
-@property (nonatomic, assign) NSString *selectedTime;
+@property (nonatomic, assign) int myCount;
 @end

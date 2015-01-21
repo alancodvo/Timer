@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "secondViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    // カウント変数を用意する
+    int count;
+}
 @property (weak, nonatomic) IBOutlet UILabel *indexLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *myDatePicker;
 - (IBAction)changeDatePicker:(id)sender;
@@ -22,7 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    // カウント変数の初期化
+    count = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +50,24 @@
 }
 
 - (IBAction)returnMain:(UIStoryboardSegue *)segue {
-    
+    // 前の画面から値を受け取って
+    secondViewController *newVC = [segue sourceViewController];
+    count = newVC.myCount;
+    // カウントアップして
+    count++;
+    // 表示する
+    NSLog(@"カウンター<%d>", count);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // もしセグエの名前がmySegueだったら
+    if ( [[segue identifier] isEqualToString:@"mySegue"]) {
+        // カウントアップして
+        count++;
+        // 次の画面へ値を受け渡す
+        secondViewController * newVC = [segue destinationViewController];
+        newVC.myCount = count;
+    }
 }
 
 @end
