@@ -14,6 +14,7 @@
 		E76078DB1A6EAD3E003C0EF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E76078DA1A6EAD3E003C0EF3 /* Images.xcassets */; };
 		E76078DE1A6EAD3E003C0EF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76078DC1A6EAD3E003C0EF3 /* LaunchScreen.xib */; };
 		E76078EA1A6EAD3E003C0EF3 /* TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76078E91A6EAD3E003C0EF3 /* TimerTests.m */; };
+		E7A0C2961A6F7C2A00A8BFF1 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A0C2951A6F7C2A00A8BFF1 /* secondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		E76078E31A6EAD3E003C0EF3 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76078E81A6EAD3E003C0EF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E76078E91A6EAD3E003C0EF3 /* TimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerTests.m; sourceTree = "<group>"; };
+		E7A0C2941A6F7C2A00A8BFF1 /* secondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
+		E7A0C2951A6F7C2A00A8BFF1 /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				E76078D21A6EAD3E003C0EF3 /* AppDelegate.m */,
 				E76078D41A6EAD3E003C0EF3 /* ViewController.h */,
 				E76078D51A6EAD3E003C0EF3 /* ViewController.m */,
+				E7A0C2941A6F7C2A00A8BFF1 /* secondViewController.h */,
+				E7A0C2951A6F7C2A00A8BFF1 /* secondViewController.m */,
 				E76078D71A6EAD3E003C0EF3 /* Main.storyboard */,
 				E76078DA1A6EAD3E003C0EF3 /* Images.xcassets */,
 				E76078DC1A6EAD3E003C0EF3 /* LaunchScreen.xib */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A0C2961A6F7C2A00A8BFF1 /* secondViewController.m in Sources */,
 				E76078D61A6EAD3E003C0EF3 /* ViewController.m in Sources */,
 				E76078D31A6EAD3E003C0EF3 /* AppDelegate.m in Sources */,
 				E76078D01A6EAD3E003C0EF3 /* main.m in Sources */,
