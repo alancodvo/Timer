@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController {
-    NSString *selectedTime;
-}
-@property (nonatomic, assign) NSString *selectedTime;
+@interface ViewController : UIViewController
 
 @end
 

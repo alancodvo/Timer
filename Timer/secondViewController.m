@@ -9,10 +9,7 @@
 #import "secondViewController.h"
 #import "ViewController.h"
 
-@interface secondViewController () {
-    // 選択した時間の変数
-    NSString *selectedTime;
-}
+@interface secondViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nerumadeLabel;
 
 
@@ -21,11 +18,11 @@
 @implementation secondViewController
 
 @synthesize myCount;
+@synthesize selectedTime;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    selectedTime = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +33,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     // 2つ目の画面を表示するとき、データを表示する
     NSLog(@"1つ目の画面からのデータ<%d>", myCount);
+    self.nerumadeLabel.text = selectedTime;
 }
 
 @end

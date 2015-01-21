@@ -12,12 +12,14 @@
 @interface ViewController () {
     // カウント変数を用意する
     int count;
+    NSString *selectTime;
 }
 @property (weak, nonatomic) IBOutlet UILabel *indexLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *myDatePicker;
 - (IBAction)changeDatePicker:(id)sender;
 - (IBAction)tapBtn:(id)sender;
 - (IBAction)returnMain:(UIStoryboardSegue *)segue;
+@property (nonatomic, assign) NSString *selectedTime;
 
 @end
 
@@ -28,6 +30,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     // カウント変数の初期化
     count = 0;
+    selectTime = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +50,7 @@
     [df2 setDateFormat:@"HH:mm"];
     NSString *datestr2 = [df2 stringFromDate:self.myDatePicker.date];
     NSLog(@"%@", datestr2);
+    
 }
 
 - (IBAction)returnMain:(UIStoryboardSegue *)segue {
@@ -60,6 +64,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSDateFormatter *df3 = [[NSDateFormatter alloc] init];
+    [df3 setDateFormat:@"HH:mm"];
+    NSString *datestr3 = [df3 stringFromDate:self.myDatePicker.date];
+    selectTime = datestr3;
     // もしセグエの名前がmySegueだったら
     if ( [[segue identifier] isEqualToString:@"mySegue"]) {
         // カウントアップして
@@ -67,6 +75,7 @@
         // 次の画面へ値を受け渡す
         secondViewController * newVC = [segue destinationViewController];
         newVC.myCount = count;
+        newVC.selectedTime = selectTime;
     }
 }
 
