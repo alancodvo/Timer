@@ -7,8 +7,12 @@
 //
 
 #import "secondViewController.h"
+#import "ViewController.h"
 
-@interface secondViewController ()
+@interface secondViewController () {
+    // 選択した時間の変数
+    NSString *selectedTime;
+}
 @property (weak, nonatomic) IBOutlet UILabel *nerumadeLabel;
 
 
@@ -21,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    selectedTime = @"";
 }
 
 - (void)didReceiveMemoryWarning {
