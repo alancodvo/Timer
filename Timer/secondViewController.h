@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface secondViewController : UIViewController
-
+@interface secondViewController : UIViewController {
+    // 受け渡し用の変数
+    NSString *selectedTime;
+}
+@property (nonatomic, assign) NSString *selectedTime;
 @end
