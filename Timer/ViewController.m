@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "secondViewController.h"
 
-@interface ViewController () {
+@interface ViewController () <UIAlertViewDelegate>{
     // カウント変数を用意する
     int count;
     NSString *selectTime;
@@ -50,7 +50,13 @@
     [df2 setDateFormat:@"HH:mm"];
     NSString *datestr2 = [df2 stringFromDate:self.myDatePicker.date];
     NSLog(@"%@", datestr2);
-    
+    UIAlertView *alert = [[UIAlertView alloc] init];
+    alert.title = @"起床時刻を設定しました。";
+    alert.message = datestr2;
+    alert.delegate = self;
+    [alert addButtonWithTitle:@"キャンセル"];
+    [alert addButtonWithTitle:@"OK"];
+    [alert show];
 }
 
 - (IBAction)returnMain:(UIStoryboardSegue *)segue {
