@@ -43,7 +43,6 @@
                                 </state>
                                 <connections>
                                     <action selector="tapBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2Dp-mQ-yP5"/>
-                                    <segue destination="vJX-3h-iNZ" kind="modal" identifier="mySegue" id="JN7-Zl-jrr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,7 +67,7 @@
         <!--Second View Controller-->
         <scene sceneID="u6f-rR-NNk">
             <objects>
-                <viewController id="vJX-3h-iNZ" customClass="secondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondVC" id="vJX-3h-iNZ" customClass="secondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9LE-J7-6rn"/>
                         <viewControllerLayoutGuide type="bottom" id="1S8-YS-lwR"/>
@@ -113,7 +112,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLx-oV-dT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="GBc-KF-gKu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1111" y="410"/>
+            <point key="canvasLocation" x="1200" y="339"/>
         </scene>
     </scenes>
 </document>

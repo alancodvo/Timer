@@ -64,6 +64,24 @@
     [alert show];
 }
 
+//アラートの処理
+- (void)alertTap:(UIAlertView *)alertTap clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //遷移先ViewControllerクラスのインスタンス生成
+    secondViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondVC"];
+    
+    switch (buttonIndex) {
+        case 0://押したボタンがCancelなら何もしない
+            break;
+            
+        case 1://押したボタンがOKなら画面遷移
+            [self presentViewController:secondVC animated:YES completion:nil ];
+            [self performSegueWithIdentifier:@"mySegue" sender:nil ];
+            break;
+            
+    }
+}
+
 - (IBAction)returnMain:(UIStoryboardSegue *)segue {
     // 前の画面から値を受け取って
     secondViewController *newVC = [segue sourceViewController];
