@@ -43,6 +43,7 @@
                                 </state>
                                 <connections>
                                     <action selector="tapBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2Dp-mQ-yP5"/>
+                                    <segue destination="vJX-3h-iNZ" kind="modal" identifier="mySegue" id="3Xn-ZD-5jI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,8 +89,50 @@
                                     <segue destination="GBc-KF-gKu" kind="unwind" unwindAction="returnMain:" id="T41-Se-HyI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あと、00時間00分後に寝るのがいいでしょう。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxa-Ws-7Hp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起床時刻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxa-Ws-7Hp">
                                 <rect key="frame" x="16" y="70" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="に起床したので、" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faw-oc-O3R">
+                                <rect key="frame" x="16" y="110.5" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起床時刻+15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gJ-PO-JpV">
+                                <rect key="frame" x="16" y="156" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="に寝ると良いでしょう。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLD-fC-FcP">
+                                <rect key="frame" x="16" y="201.5" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在時刻は" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYk-mY-c3M">
+                                <rect key="frame" x="16" y="247" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在時刻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-xQ-Gcf">
+                                <rect key="frame" x="16" y="292.5" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="なので、残り時間は" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCu-54-6Db">
+                                <rect key="frame" x="16" y="338" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残り時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSl-vR-R4q">
+                                <rect key="frame" x="16" y="383.5" width="568" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -97,22 +140,53 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="faw-oc-O3R" secondAttribute="centerX" id="07r-xe-tGw"/>
+                            <constraint firstAttribute="centerX" secondItem="oYk-mY-c3M" secondAttribute="centerX" id="0mF-XB-piW"/>
+                            <constraint firstItem="3gJ-PO-JpV" firstAttribute="top" secondItem="faw-oc-O3R" secondAttribute="bottom" constant="25" id="0um-Ym-qw2"/>
+                            <constraint firstItem="faw-oc-O3R" firstAttribute="top" secondItem="Pxa-Ws-7Hp" secondAttribute="bottom" constant="20" id="1rd-JH-BtH"/>
                             <constraint firstAttribute="bottomMargin" secondItem="DRW-1i-xTp" secondAttribute="bottom" constant="40" id="2FJ-MD-RtD"/>
                             <constraint firstAttribute="centerX" secondItem="Pxa-Ws-7Hp" secondAttribute="centerX" id="76k-JI-Wsc"/>
+                            <constraint firstItem="faw-oc-O3R" firstAttribute="leading" secondItem="NsJ-NO-hus" secondAttribute="leadingMargin" id="8hD-xq-4aY"/>
+                            <constraint firstAttribute="centerX" secondItem="3gJ-PO-JpV" secondAttribute="centerX" id="A06-Ux-ev4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aLD-fC-FcP" secondAttribute="trailing" id="A6p-Gf-2H4"/>
+                            <constraint firstAttribute="centerX" secondItem="xSl-vR-R4q" secondAttribute="centerX" id="C6Q-hk-Re2"/>
+                            <constraint firstItem="jCu-54-6Db" firstAttribute="leading" secondItem="NsJ-NO-hus" secondAttribute="leadingMargin" id="JLk-hA-RDT"/>
+                            <constraint firstItem="xSl-vR-R4q" firstAttribute="leading" secondItem="NsJ-NO-hus" secondAttribute="leadingMargin" id="L6j-rO-8uC"/>
+                            <constraint firstItem="OdF-xQ-Gcf" firstAttribute="leading" secondItem="NsJ-NO-hus" secondAttribute="leadingMargin" id="Mru-K6-VQo"/>
+                            <constraint firstItem="3gJ-PO-JpV" firstAttribute="leading" secondItem="NsJ-NO-hus" secondAttribute="leadingMargin" id="NLk-b0-Mjg"/>
+                            <constraint firstItem="jCu-54-6Db" firstAttribute="top" secondItem="OdF-xQ-Gcf" secondAttribute="bottom" constant="25" id="OcW-J2-6oC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OdF-xQ-Gcf" secondAttribute="trailing" id="PyK-Vn-FxR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oYk-mY-c3M" secondAttribute="trailing" id="Q3E-ea-Dh5"/>
+                            <constraint firstAttribute="centerX" secondItem="OdF-xQ-Gcf" secondAttribute="centerX" id="UMq-ib-lj6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pxa-Ws-7Hp" secondAttribute="trailing" id="UOb-Tc-MF8"/>
+                            <constraint firstItem="xSl-vR-R4q" firstAttribute="top" secondItem="jCu-54-6Db" secondAttribute="bottom" constant="25" id="ZVX-sM-ys6"/>
+                            <constraint firstAttribute="centerX" secondItem="aLD-fC-FcP" secondAttribute="centerX" id="ZVi-La-JGx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="faw-oc-O3R" secondAttribute="trailing" id="alf-iD-7NC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xSl-vR-R4q" secondAttribute="trailing" id="dum-Ip-tme"/>
+                            <constraint firstItem="oYk-mY-c3M" firstAttribute="top" secondItem="aLD-fC-FcP" secondAttribute="bottom" constant="25" id="eei-8D-Jep"/>
                             <constraint firstItem="Pxa-Ws-7Hp" firstAttribute="top" secondItem="9LE-J7-6rn" secondAttribute="bottom" constant="50" id="ftB-9s-g0C"/>
+                            <constraint firstItem="aLD-fC-FcP" firstAttribute="leading" secondItem="NsJ-NO-hus" secondAttribute="leadingMargin" id="jrV-Fr-EyN"/>
+                            <constraint firstItem="aLD-fC-FcP" firstAttribute="top" secondItem="3gJ-PO-JpV" secondAttribute="bottom" constant="25" id="jrl-nh-qNe"/>
+                            <constraint firstItem="OdF-xQ-Gcf" firstAttribute="top" secondItem="oYk-mY-c3M" secondAttribute="bottom" constant="25" id="kg1-ko-211"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jCu-54-6Db" secondAttribute="trailing" id="pat-JG-ffo"/>
+                            <constraint firstItem="oYk-mY-c3M" firstAttribute="leading" secondItem="NsJ-NO-hus" secondAttribute="leadingMargin" id="sux-yY-BQV"/>
                             <constraint firstAttribute="centerX" secondItem="DRW-1i-xTp" secondAttribute="centerX" id="u18-11-at5"/>
                             <constraint firstItem="Pxa-Ws-7Hp" firstAttribute="leading" secondItem="NsJ-NO-hus" secondAttribute="leadingMargin" id="x7I-wB-OEb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3gJ-PO-JpV" secondAttribute="trailing" id="xUV-RO-bVC"/>
+                            <constraint firstAttribute="centerX" secondItem="jCu-54-6Db" secondAttribute="centerX" id="zQA-Nz-OSa"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nerumadeLabel" destination="Pxa-Ws-7Hp" id="KWJ-HJ-Sna"/>
+                        <outlet property="neruTimeLabel" destination="3gJ-PO-JpV" id="GpH-GC-rg8"/>
+                        <outlet property="nerumadeLabel" destination="Pxa-Ws-7Hp" id="Vsf-ij-6Xo"/>
+                        <outlet property="nokoriTimeLabel" destination="xSl-vR-R4q" id="5TM-ZK-cI3"/>
+                        <outlet property="realTimeLabel" destination="OdF-xQ-Gcf" id="W7c-YH-W8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLx-oV-dT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="GBc-KF-gKu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1200" y="339"/>
+            <point key="canvasLocation" x="1239" y="267"/>
         </scene>
     </scenes>
 </document>
