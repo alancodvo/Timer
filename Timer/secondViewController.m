@@ -67,15 +67,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     // 2つ目の画面を表示するとき、データを表示する
-    
     NSLog(@"1つ目の画面からのデータ<%d>", myCount);
     
     
     
     // 時と分を結合してラベルに表示
-    
     selectedTimeHour = [selectedTimeHour stringByAppendingString:@":"];
-    
     self.nerumadeLabel.text = [selectedTimeHour stringByAppendingString:selectedTimeMinute];
     
     
@@ -96,27 +93,20 @@
 - (void)nerubekiTimeCalculation {
     
     // 文字列をNSIntegerに変換
-    
     NSInteger nerubekiHour = selectedTimeHour.integerValue + 15;
-    
     NSInteger nerubekiMinute = selectedTimeMinute.integerValue + 0;
     
     
     
     // 15時間足した時刻を文字列に変換
-    
     // NSIntegerを文字列に変換
-    
     NSString *nerubekiHourStr = [NSString stringWithFormat:@"%ld", (long)nerubekiHour];
-    
     NSString *nerubekiMinuteStr = [NSString stringWithFormat:@"%ld", (long)nerubekiMinute];
     
     
     
     // 時と分を結合してラベルに表示
-    
     nerubekiHourStr = [nerubekiHourStr stringByAppendingString:@":"];
-    
     self.neruTimeLabel.text = [nerubekiHourStr stringByAppendingString:nerubekiMinuteStr];
     
 }
@@ -137,6 +127,30 @@
     self.realTimeLabel.text = [realTimeHourStr stringByAppendingString:realTimeMinuteStr];
     
     // 現在時刻と寝るべき時刻の比較から残り時間の算出
+    NSInteger realTimeHour = realTimeHourStr.integerValue;
+    NSInteger realTimeMinute = realTimeMinuteStr.integerValue;
+    
+    // 寝るべき時間
+    NSInteger nerubekiHour = selectedTimeHour.integerValue + 15;
+    NSInteger nerubekiMinute = selectedTimeMinute.integerValue + 0;
+    
+    // 算出
+    NSInteger nerubekiTime = nerubekiHour * 60 + nerubekiMinute;
+    NSInteger realTime = realTimeHour * 60 + realTimeMinute;
+    NSInteger cdTime = nerubekiTime - realTime;
+    NSInteger cdHour = cdTime / 60;
+    NSInteger cdMinute = cdTime % 60;
+    
+    // NSIntegerを文字列に変換
+    NSString *cdHourStr = [NSString stringWithFormat:@"%ld", (long)cdHour];
+    NSString *cdMinuteStr = [NSString stringWithFormat:@"%ld", (long)cdMinute];
+
+    // 時と分を結合してラベルに表示
+    cdHourStr = [cdHourStr stringByAppendingString:@":"];
+    self.nokoriTimeLabel.text = [cdHourStr stringByAppendingString:cdMinuteStr];
+
+    
+
     
     
 }
