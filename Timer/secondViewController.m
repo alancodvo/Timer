@@ -125,12 +125,19 @@
 - (void)countdounLiveTime {
     // 現在時刻の取得
     NSDate *nowTimeGMT = [NSDate date];
-    NSDateFormatter *nowTimeDF = [[NSDateFormatter alloc] init];
-    [nowTimeDF setDateFormat:@"HH:mm"];
-    NSString *realTimeStr = [nowTimeDF stringFromDate:nowTimeGMT];
+    NSDateFormatter *nowTimeDFHour = [[NSDateFormatter alloc] init];
+    [nowTimeDFHour setDateFormat:@"HH"];
+    NSString *realTimeHourStr = [nowTimeDFHour stringFromDate:nowTimeGMT];
+    NSDateFormatter *nowTimeDFMinute = [[NSDateFormatter alloc] init];
+    [nowTimeDFMinute setDateFormat:@"mm"];
+    NSString *realTimeMinuteStr = [nowTimeDFMinute stringFromDate:nowTimeGMT];
 
     // 現在時刻の表示
-    self.realTimeLabel.text = realTimeStr;
+    realTimeHourStr = [realTimeHourStr stringByAppendingString:@":"];
+    self.realTimeLabel.text = [realTimeHourStr stringByAppendingString:realTimeMinuteStr];
+    
+    // 現在時刻と寝るべき時刻の比較から残り時間の算出
+    
     
 }
 
