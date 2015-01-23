@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Timer/secondViewController.m"
-            timestampString = "443524655.865436"
+            timestampString = "443665203.284014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "@interface secondViewController()"
             landmarkType = "2">
          </BreakpointContent>

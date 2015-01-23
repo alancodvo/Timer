@@ -10,7 +10,6 @@
 #import "ViewController.h"
 
 @interface secondViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *nerumadeLabel;
 
 
 @end

@@ -28,7 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    // カウント変数の初期化
+    
+    // 変数の初期化
     count = 0;
     selectTime = @"";
 }
@@ -38,6 +39,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// DatePickerを動かした時にログを出力するのと、そのフォーマットの指定
 - (IBAction)changeDatePicker:(id)sender {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"HH:mm"];
@@ -45,11 +47,14 @@
     NSLog(@"%@", datestr);
 }
 
+// ボタンを押した時にDatePickerで取得したデータのフォーマットの指定とアラートの表示
 - (IBAction)tapBtn:(id)sender {
     NSDateFormatter *df2 = [[NSDateFormatter alloc] init];
     [df2 setDateFormat:@"HH:mm"];
     NSString *datestr2 = [df2 stringFromDate:self.myDatePicker.date];
     NSLog(@"%@", datestr2);
+    
+    // アラートの設定
     UIAlertView *alert = [[UIAlertView alloc] init];
     alert.title = @"起床時刻を設定しました。";
     alert.message = datestr2;

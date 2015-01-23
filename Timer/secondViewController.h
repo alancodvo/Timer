@@ -15,4 +15,5 @@
 }
 @property (nonatomic, assign) int myCount;
 @property (nonatomic, copy) NSString *selectedTime;
+@property (weak, nonatomic) IBOutlet UILabel *nerumadeLabel;
 @end
