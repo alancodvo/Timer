@@ -124,8 +124,14 @@
 // 現在時刻の取得と寝るべき時間の比較
 - (void)countdounLiveTime {
     // 現在時刻の取得
-    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:[[NSTimeZone systemTimeZone] secondsFromGMT]];
-    NSLog(@"Current Time %@", now);
+    NSDate *nowTimeGMT = [NSDate date];
+    NSDateFormatter *nowTimeDF = [[NSDateFormatter alloc] init];
+    [nowTimeDF setDateFormat:@"HH:mm"];
+    NSString *realTimeStr = [nowTimeDF stringFromDate:nowTimeGMT];
+
+    // 現在時刻の表示
+    self.realTimeLabel.text = realTimeStr;
+    
 }
 
 @end
