@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
 
-@interface Sensor : UIViewController
+@interface Sensor : UIViewController {
+    self.motionManager = [[CMMotionManager alloc] init];
+}
 
 @end
