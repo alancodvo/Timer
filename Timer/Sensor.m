@@ -10,6 +10,7 @@
 
 @interface Sensor ()
 
+
 @end
 
 @implementation Sensor
@@ -30,9 +31,9 @@
         CMAccelerometerHandler handler = ^(CMAccelerometerData *data, NSError *error)
         {
             // 画面に表示
-            self.xLabel.text = [NSString stringWithFormat:@"x %f", data.acceleration.x];
-            self.yLabel.text = [NSString stringWithFormat:@"y %f", data.acceleration.y];
-            self.zLabel.text = [NSString stringWithFormat:@"z %f", data.acceleration.z];
+//            self.xLabel.text = [NSString stringWithFormat:@"x %f", data.acceleration.x];
+//            self.yLabel.text = [NSString stringWithFormat:@"y %f", data.acceleration.y];
+//            self.zLabel.text = [NSString stringWithFormat:@"z %f", data.acceleration.z];
         };
         
         // 加速度の取得開始

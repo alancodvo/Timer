@@ -44,10 +44,11 @@
     
     // Do any additional setup after loading the view.
     
-    if (_motionManager.accelerometerAvailable)
+    self.motionManager = [[CMMotionManager alloc] init];
+    if (self.motionManager.accelerometerAvailable)
     {
         // センサーの更新間隔の指定
-        _motionManager.accelerometerUpdateInterval = 1 / 10;  // 10Hz
+        self.motionManager.accelerometerUpdateInterval = 1 / 10;  // 10Hz
         
         // ハンドラを指定
         CMAccelerometerHandler handler = ^(CMAccelerometerData *data, NSError *error)
@@ -59,7 +60,7 @@
         };
         
         // 加速度の取得開始
-        [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:handler];
+        [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:handler];
     }
 }
     

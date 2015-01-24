@@ -10,7 +10,8 @@
 #import <CoreMotion/CoreMotion.h>
 
 @interface Sensor : UIViewController {
-    self.motionManager = [[CMMotionManager alloc] init];
+    CMMotionManager *motionManager;
 }
+@property(nonatomic, strong) CMMotionManager *motionManager;
 
 @end
