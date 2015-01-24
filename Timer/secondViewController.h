@@ -37,5 +37,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *xLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yLabel;
 @property (weak, nonatomic) IBOutlet UILabel *zLabel;
+@property (weak, nonatomic) IBOutlet UILabel *xLabelGyro;
+@property (weak, nonatomic) IBOutlet UILabel *yLabelGyro;
+@property (weak, nonatomic) IBOutlet UILabel *zLabelGyro;
 
 @end

@@ -54,14 +54,33 @@
         CMAccelerometerHandler handler = ^(CMAccelerometerData *data, NSError *error)
         {
             // 画面に表示
-            self.xLabel.text = [NSString stringWithFormat:@"x %f", data.acceleration.x];
-            self.yLabel.text = [NSString stringWithFormat:@"y %f", data.acceleration.y];
-            self.zLabel.text = [NSString stringWithFormat:@"z %f", data.acceleration.z];
+            self.xLabel.text = [NSString stringWithFormat:@"xAccele %f", data.acceleration.x];
+            self.yLabel.text = [NSString stringWithFormat:@"yAccele %f", data.acceleration.y];
+            self.zLabel.text = [NSString stringWithFormat:@"zAccele %f", data.acceleration.z];
         };
         
         // 加速度の取得開始
         [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:handler];
     }
+    
+    if (self.motionManager.gyroAvailable)
+    {
+        // センサーの更新間隔の指定
+        self.motionManager.gyroUpdateInterval = 1 / 10;  // 10Hz
+        
+        // ハンドラを指定
+        CMGyroHandler handlerGyro = ^(CMGyroData *dataGyro, NSError *errorGyro)
+        {
+            // 画面に表示
+            self.xLabelGyro.text = [NSString stringWithFormat:@"xGyro %f", dataGyro.rotationRate.x];
+            self.yLabelGyro.text = [NSString stringWithFormat:@"yGyro %f", dataGyro.rotationRate.y];
+            self.zLabelGyro.text = [NSString stringWithFormat:@"zGyro %f", dataGyro.rotationRate.z];
+        };
+        
+        // ジャイロの取得開始
+        [self.motionManager startGyroUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:handlerGyro];
+    }
+
 }
     
 - (void)viewDidDisappear:(BOOL)animated
@@ -71,6 +90,11 @@
     // 加速度の取得停止
     if (self.motionManager.accelerometerActive) {
         [self.motionManager stopAccelerometerUpdates];
+    }
+    
+    // ジャイロの取得停止
+    if (self.motionManager.gyroActive) {
+        [self.motionManager stopGyroUpdates];
     }
 }
 
