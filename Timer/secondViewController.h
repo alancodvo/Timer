@@ -17,13 +17,13 @@
 #import <UIKit/UIKit.h>
 
 
-
 @interface secondViewController : UIViewController {
     
     // 受け渡し用の変数
     int myCount;
     NSString *selectedTimeHour;
     NSString *selectedTimeMinute;
+
     
 }
 
