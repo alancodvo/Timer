@@ -28,15 +28,14 @@
 }
 
 @property (nonatomic, assign) int myCount;
-
 @property (nonatomic, copy) NSString *selectedTimeHour;
-
 @property (nonatomic, copy) NSString *selectedTimeMinute;
-
 @property (weak, nonatomic) IBOutlet UILabel *nerumadeLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *neruTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *realTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nokoriTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *xLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yLabel;
+@property (weak, nonatomic) IBOutlet UILabel *zLabel;
 
 @end

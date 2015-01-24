@@ -16,15 +16,13 @@
 
 #import "secondViewController.h"
 #import "ViewController.h"
-
+#import "Sensor.h"
 
 
 
 @interface secondViewController ()
 
-
-
-
+@property(nonatomic, strong) CMMotionManager *motionManager;
 
 @end
 
@@ -35,9 +33,7 @@
 
 
 @synthesize myCount;
-
 @synthesize selectedTimeHour;
-
 @synthesize selectedTimeMinute;
 
 
@@ -48,9 +44,34 @@
     
     // Do any additional setup after loading the view.
     
+    if (_motionManager.accelerometerAvailable)
+    {
+        // センサーの更新間隔の指定
+        _motionManager.accelerometerUpdateInterval = 1 / 10;  // 10Hz
+        
+        // ハンドラを指定
+        CMAccelerometerHandler handler = ^(CMAccelerometerData *data, NSError *error)
+        {
+            // 画面に表示
+            self.xLabel.text = [NSString stringWithFormat:@"x %f", data.acceleration.x];
+            self.yLabel.text = [NSString stringWithFormat:@"y %f", data.acceleration.y];
+            self.zLabel.text = [NSString stringWithFormat:@"z %f", data.acceleration.z];
+        };
+        
+        // 加速度の取得開始
+        [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:handler];
+    }
 }
-
-
+    
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    // 加速度の取得停止
+    if (self.motionManager.accelerometerActive) {
+        [self.motionManager stopAccelerometerUpdates];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     
