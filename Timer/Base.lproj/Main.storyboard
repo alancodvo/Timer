@@ -138,27 +138,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJh-aS-LsB">
-                                <rect key="frame" x="16" y="429" width="80" height="20.5"/>
+                                <rect key="frame" x="16" y="429" width="110" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="YyT-c1-cDZ"/>
+                                    <constraint firstAttribute="width" constant="110" id="YyT-c1-cDZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfd-sg-H3b">
-                                <rect key="frame" x="260" y="429" width="80" height="20.5"/>
+                                <rect key="frame" x="245" y="429" width="110" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="rkb-AM-1j3"/>
+                                    <constraint firstAttribute="width" constant="110" id="rkb-AM-1j3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxm-zF-hUz">
-                                <rect key="frame" x="504" y="429" width="80" height="20.5"/>
+                                <rect key="frame" x="474" y="429" width="110" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="8ct-5l-FYa"/>
+                                    <constraint firstAttribute="width" constant="110" id="8ct-5l-FYa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
