@@ -57,6 +57,9 @@
     selectTimeHour = @"";
     selectTimeMinute = @"";
     
+    // アプリの起動時に UIApplication の setMinimumBackgroundFetchInterval: メソッドを呼び出し、バックグラウンド実行の要求をする。
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    
 }
 
 
