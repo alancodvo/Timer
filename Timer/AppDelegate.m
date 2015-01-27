@@ -42,4 +42,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// バックグラウンド実行の際に呼び出される
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
+{
+    // ここにバックグラウンド処理
+}
+
 @end
