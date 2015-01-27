@@ -15,7 +15,7 @@
 		E76078DE1A6EAD3E003C0EF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76078DC1A6EAD3E003C0EF3 /* LaunchScreen.xib */; };
 		E76078EA1A6EAD3E003C0EF3 /* TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76078E91A6EAD3E003C0EF3 /* TimerTests.m */; };
 		E7A0C2961A6F7C2A00A8BFF1 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A0C2951A6F7C2A00A8BFF1 /* secondViewController.m */; };
-		E7E4B3641A732AF400F59926 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4B3631A732AF400F59926 /* CoreMotion.framework */; };
+		E7E4B3641A732AF400F59926 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4B3631A732AF400F59926 /* CoreMotion.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E7E4B3671A732B4D00F59926 /* Sensor.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E4B3661A732B4D00F59926 /* Sensor.m */; };
 /* End PBXBuildFile section */
 
@@ -72,10 +72,10 @@
 		E76078C11A6EAD3E003C0EF3 = {
 			isa = PBXGroup;
 			children = (
-				E7E4B3631A732AF400F59926 /* CoreMotion.framework */,
 				E76078CC1A6EAD3E003C0EF3 /* Timer */,
 				E76078E61A6EAD3E003C0EF3 /* TimerTests */,
 				E76078CB1A6EAD3E003C0EF3 /* Products */,
+				E7E4B3631A732AF400F59926 /* CoreMotion.framework */,
 			);
 			sourceTree = "<group>";
 		};
