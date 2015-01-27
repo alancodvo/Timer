@@ -30,9 +30,9 @@
         CMAccelerometerHandler handler = ^(CMAccelerometerData *data, NSError *error)
         {
             // 画面に表示
-            self.xLabel.text = [NSString stringWithFormat:@"xA %f", data.acceleration.x];
-            self.yLabel.text = [NSString stringWithFormat:@"yA %f", data.acceleration.y];
-            self.zLabel.text = [NSString stringWithFormat:@"zA %f", data.acceleration.z];
+//            self.xLabel.text = [NSString stringWithFormat:@"xA %f", data.acceleration.x];
+//            self.yLabel.text = [NSString stringWithFormat:@"yA %f", data.acceleration.y];
+//            self.zLabel.text = [NSString stringWithFormat:@"zA %f", data.acceleration.z];
         };
         
         // 加速度の取得開始
@@ -48,9 +48,9 @@
         CMGyroHandler handlerGyro = ^(CMGyroData *dataGyro, NSError *errorGyro)
         {
             // 画面に表示
-            self.xLabelGyro.text = [NSString stringWithFormat:@"xG %f", dataGyro.rotationRate.x];
-            self.yLabelGyro.text = [NSString stringWithFormat:@"yG %f", dataGyro.rotationRate.y];
-            self.zLabelGyro.text = [NSString stringWithFormat:@"zG %f", dataGyro.rotationRate.z];
+//            self.xLabelGyro.text = [NSString stringWithFormat:@"xG %f", dataGyro.rotationRate.x];
+//            self.yLabelGyro.text = [NSString stringWithFormat:@"yG %f", dataGyro.rotationRate.y];
+//            self.zLabelGyro.text = [NSString stringWithFormat:@"zG %f", dataGyro.rotationRate.z];
         };
         
         // ジャイロの取得開始
