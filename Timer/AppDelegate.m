@@ -71,4 +71,15 @@
     // ここにバックグラウンド処理
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // デバイストークンの両端の「<>」を取り除く
+    NSString *deviceTokenString = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    
+    // デバイストークン中の半角スペースを除去する
+    deviceTokenString = [deviceTokenString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSLog(@"%@",deviceTokenString);
+}
+
 @end
