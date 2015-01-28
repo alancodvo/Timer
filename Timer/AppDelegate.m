@@ -16,33 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //メソッドの有無でOSを判別
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)]) {
-        
-        //iOS8
-        //デバイストークの取得
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-        
-        //許可アラートの表示
-        UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-        
-    } else {
-        
-        //iOS7
-        UIRemoteNotificationType types =UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert| UIRemoteNotificationTypeSound;
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
-    }
+    
+    // プッシュ通知許可の取得
+    [self confirmPushNotification];
     
     // Override point for customization after application launch.
     return YES;
 }
 
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-{
-    [application registerForRemoteNotifications];
-}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -72,6 +54,47 @@
     // ここにバックグラウンド処理
 }
 
+// プッシュ通知の許可取得
+- (void)confirmPushNotification
+{
+    // iOSバージョンによって、プッシュ通知許可取得メソッドを分岐
+    CGFloat osVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if(osVersion >= 8.0f) {
+        // iOS8以降
+        // デバイストークンの取得
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        
+        // 許可アラートの表示
+        UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+        // ローカル通知の許可取得
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        
+    } else {
+        // iOS8未満
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert |
+                                                                               UIRemoteNotificationTypeBadge |
+                                                                               UIRemoteNotificationTypeSound)];
+    }
+}
+
+// プッシュ通知の許可が取得できた場合
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSLog(@"デバイストークン取得成功%@", deviceToken);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // [defaults setObject:[TwimeshiCore stringFromDeviceTokenData:deviceToken] forKey:@"deviceToken"];
+    [defaults synchronize];
+}
+
+// プッシュ通知の許可が取得できなかった場合
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"デバイストークン取得失敗");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"alternativeTokenNotificationForNotPermitted" forKey:@"deviceToken"];
+    [defaults synchronize];
+}
 
 
 @end
