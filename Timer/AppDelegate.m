@@ -10,6 +10,8 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, assign) NSString *stringFromDeviceTokenData;
+
 @end
 
 @implementation AppDelegate
@@ -83,7 +85,7 @@
 {
     NSLog(@"デバイストークン取得成功%@", deviceToken);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    // [defaults setObject:[TwimeshiCore stringFromDeviceTokenData:deviceToken] forKey:@"deviceToken"];
+    [defaults setObject:[self stringFromDeviceTokenData:deviceToken] forKey:@"deviceToken"];
     [defaults synchronize];
 }
 
@@ -96,5 +98,14 @@
     [defaults synchronize];
 }
 
+- (NSString *)stringFromDeviceTokenData:(NSData *)deviceToken
+{
+    const char *data = [deviceToken bytes];
+    NSMutableString *token = [NSMutableString string];
+    for (int i = 0; i < [deviceToken length]; i++) {
+        [token appendFormat:@"%02.2hhX", data[i]];
+    }
+    return [token copy];
+}
 
 @end
