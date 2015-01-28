@@ -59,19 +59,7 @@
     
     // アプリの起動時に UIApplication の setMinimumBackgroundFetchInterval: メソッドを呼び出し、バックグラウンド実行の要求をする。
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-    
 }
-
-
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-    
-    // Dispose of any resources that can be recreated.
-    
-}
-
 
 
 // 選択した時刻のフォーマット指定とログ出力
