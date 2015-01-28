@@ -192,11 +192,8 @@
     // 時と分を結合してラベルに表示
     cdHourStr = [cdHourStr stringByAppendingString:@":"];
     self.nokoriTimeLabel.text = [cdHourStr stringByAppendingString:cdMinuteStr];
-
-    
-
-    
-    
 }
+
+
 
 @end
