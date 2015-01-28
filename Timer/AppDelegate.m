@@ -16,8 +16,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // バッジ、サウンド、アラートをリモート通知対象として登録する
+    // (画面にはプッシュ通知許可して良いかの確認画面が出る)
+    [application registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge|
+                                                      UIRemoteNotificationTypeSound|
+                                                      UIRemoteNotificationTypeAlert)];
+    
     // Override point for customization after application launch.
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // デバイストークンの両端の「<>」を取り除く
+    NSString *deviceTokenString = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    
+    // デバイストークン中の半角スペースを除去する
+    deviceTokenString = [deviceTokenString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSLog(@"%@",deviceTokenString);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
